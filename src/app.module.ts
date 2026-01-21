@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './infrastructure/database/database.module';
+import { AuthModule } from './infrastructure/auth/auth.module';
 import { CreateProfissionalUseCase } from './application/use-cases/create-profissional.use-case';
 import { ProfissionalController } from './presentation/controllers/profissional.controller';
 
@@ -12,6 +13,7 @@ import { ProfissionalController } from './presentation/controllers/profissional.
       isGlobal: true,
     }),
     DatabaseModule,
+    AuthModule,
   ],
   controllers: [AppController, ProfissionalController],
   providers: [
@@ -20,4 +22,5 @@ import { ProfissionalController } from './presentation/controllers/profissional.
   ],
 })
 export class AppModule { }
+
 
