@@ -8,12 +8,16 @@ async function bootstrap() {
   // Enable validation globally
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
-    forbidNonWhitelisted: true,
+    forbidNonWhitelisted: false, // Allow extra fields from frontend
     transform: true,
+    transformOptions: {
+      enableImplicitConversion: true, // Auto-convert types
+    },
   }));
 
   app.enableCors({
-    origin: 'http://localhost:5173',
+    origin: true, // Allow all origins in development
+    credentials: true,
   });
 
   await app.listen(process.env.PORT ?? 3000);
