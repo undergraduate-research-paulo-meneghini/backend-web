@@ -7,7 +7,7 @@ export class Profissional {
     cargo: string;
     unidade_saude: string;
     email: string;
-    senha_hash: string;
+    password_hash: string;
     perfil_acesso: string;
     ativo: boolean;
     data_cadastro: Date;

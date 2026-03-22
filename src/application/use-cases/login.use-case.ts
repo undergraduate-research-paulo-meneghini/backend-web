@@ -20,10 +20,10 @@ export class LoginUseCase {
             throw new UnauthorizedException('Credenciais inválidas');
         }
 
-        // Validar senha
+        // Validate password
         const isPasswordValid = await this.authRepository.validatePassword(
             credentials.password,
-            profissional.senha_hash
+            profissional.password_hash
         );
 
         if (!isPasswordValid) {
@@ -44,12 +44,12 @@ export class LoginUseCase {
 
         const access_token = this.jwtService.sign(payload);
 
-        // Remover senha do retorno
-        const { senha_hash, ...profissionalSemSenha } = profissional;
+        // Remove password from response
+        const { password_hash, ...professionalWithoutPassword } = profissional;
 
         return {
             access_token,
-            profissional: profissionalSemSenha as any,
+            profissional: professionalWithoutPassword as any,
         };
     }
 }

@@ -55,7 +55,7 @@ export class ProfissionalRepository implements IProfissionalRepository {
         profissional.cargo = schema.cargo;
         profissional.unidade_saude = schema.unidade_saude;
         profissional.email = schema.email;
-        profissional.senha_hash = schema.senha_hash;
+        profissional.password_hash = schema.password_hash;
         profissional.perfil_acesso = schema.perfil_acesso;
         profissional.ativo = schema.ativo;
         profissional.data_cadastro = schema.data_cadastro;
@@ -72,7 +72,7 @@ export class ProfissionalRepository implements IProfissionalRepository {
             cargo: profissional.cargo,
             unidade_saude: profissional.unidade_saude,
             email: profissional.email,
-            senha_hash: profissional.senha_hash,
+            password_hash: profissional.password_hash,
             perfil_acesso: profissional.perfil_acesso,
             ativo: profissional.ativo,
             data_cadastro: profissional.data_cadastro,

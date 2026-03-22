@@ -29,7 +29,7 @@ export class AuthRepository implements IAuthRepository {
         try {
             return await bcrypt.compare(plainPassword, hashedPassword);
         } catch (error) {
-            // Se a senha no banco não estiver hasheada, compara diretamente (compatibilidade)
+            // If password in database is not hashed, compare directly (compatibility)
             return plainPassword === hashedPassword;
         }
     }
@@ -49,7 +49,7 @@ export class AuthRepository implements IAuthRepository {
         profissional.cargo = schema.cargo;
         profissional.unidade_saude = schema.unidade_saude;
         profissional.email = schema.email;
-        profissional.senha_hash = schema.senha_hash;
+        profissional.password_hash = schema.password_hash;
         profissional.perfil_acesso = schema.perfil_acesso;
         profissional.ativo = schema.ativo;
         profissional.data_cadastro = schema.data_cadastro;

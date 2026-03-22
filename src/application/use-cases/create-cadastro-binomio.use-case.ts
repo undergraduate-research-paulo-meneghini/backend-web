@@ -10,7 +10,7 @@ export interface CadastroWithUserResponse {
     cadastro: CadastroBinomio;
     userCredentials: {
         email: string;
-        senha: string;
+        password: string;
         id_user_mae: number;
     };
 }
@@ -113,7 +113,7 @@ export class CreateCadastroBinomioUseCase {
         const userMae: Partial<UserMae> = {
             id_binomio: savedCadastro.id_binomio,
             email,
-            senha_hash: hashedPassword,
+            password_hash: hashedPassword,
             ativo: true,
             data_cadastro: new Date(),
         };
@@ -125,7 +125,7 @@ export class CreateCadastroBinomioUseCase {
             cadastro: savedCadastro,
             userCredentials: {
                 email: savedUserMae.email,
-                senha: plainPassword, // Return plain password only once
+                password: plainPassword, // Return plain password only once
                 id_user_mae: savedUserMae.id_user_mae,
             },
         };

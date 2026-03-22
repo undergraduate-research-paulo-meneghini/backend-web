@@ -13,9 +13,9 @@ export class ValidateTokenUseCase {
         const profissional = await this.profissionalRepository.findById(userId);
 
         if (profissional) {
-            // Remover senha do retorno
-            const { senha_hash, ...profissionalSemSenha } = profissional;
-            return profissionalSemSenha as Profissional;
+            // Remove password from response
+            const { password_hash, ...professionalWithoutPassword } = profissional;
+            return professionalWithoutPassword as Profissional;
         }
 
         return null;

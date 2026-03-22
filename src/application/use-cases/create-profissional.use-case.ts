@@ -19,7 +19,7 @@ export class CreateProfissionalUseCase {
             cargo: dataProfissional.cargo,
             unidade_saude: dataProfissional.unidade_saude,
             email: dataProfissional.email,
-            senha_hash: dataProfissional.senha_hash,
+            password_hash: dataProfissional.password_hash,
             perfil_acesso: dataProfissional.perfil_acesso,
             ativo: dataProfissional.ativo,
             data_cadastro: new Date()

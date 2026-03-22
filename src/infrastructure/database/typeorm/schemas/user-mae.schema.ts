@@ -13,7 +13,7 @@ export class UserMaeSchema {
     email: string;
 
     @Column({ length: 255 })
-    senha_hash: string;
+    password_hash: string;
 
     @Column({ default: true })
     ativo: boolean;

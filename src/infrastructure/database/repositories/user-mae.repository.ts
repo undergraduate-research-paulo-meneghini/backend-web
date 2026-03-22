@@ -44,7 +44,7 @@ export class UserMaeRepository implements IUserMaeRepository {
         userMae.id_user_mae = schema.id_user_mae;
         userMae.id_binomio = schema.id_binomio;
         userMae.email = schema.email;
-        userMae.senha_hash = schema.senha_hash;
+        userMae.password_hash = schema.password_hash;
         userMae.ativo = schema.ativo;
         userMae.data_cadastro = schema.data_cadastro;
         userMae.ultimo_login = schema.ultimo_login;
@@ -56,7 +56,7 @@ export class UserMaeRepository implements IUserMaeRepository {
             id_user_mae: userMae.id_user_mae,
             id_binomio: userMae.id_binomio,
             email: userMae.email,
-            senha_hash: userMae.senha_hash,
+            password_hash: userMae.password_hash,
             ativo: userMae.ativo,
             data_cadastro: userMae.data_cadastro,
             ultimo_login: userMae.ultimo_login,

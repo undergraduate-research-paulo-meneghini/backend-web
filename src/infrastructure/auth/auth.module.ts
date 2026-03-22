@@ -5,9 +5,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import jwtConfig from '../config/jwt.config';
 import { ProfissionalSchema } from '../database/typeorm/schemas/profissional.schema';
+import { UserMaeSchema } from '../database/typeorm/schemas/user-mae.schema';
 import { AuthRepository } from './repositories/auth.repository';
+import { AuthMaeRepository } from './repositories/auth-mae.repository';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LoginUseCase } from '../../application/use-cases/login.use-case';
+import { LoginMaeUseCase } from '../../application/use-cases/login-mae.use-case';
 import { ValidateTokenUseCase } from '../../application/use-cases/validate-token.use-case';
 import { AuthController } from '../../presentation/controllers/auth.controller';
 import { DatabaseModule } from '../database/database.module';
@@ -24,7 +27,7 @@ import { DatabaseModule } from '../database/database.module';
                 signOptions: { expiresIn: '1d' },
             }),
         }),
-        TypeOrmModule.forFeature([ProfissionalSchema]),
+        TypeOrmModule.forFeature([ProfissionalSchema, UserMaeSchema]),
         DatabaseModule,
     ],
     controllers: [AuthController],
@@ -33,8 +36,13 @@ import { DatabaseModule } from '../database/database.module';
             provide: 'IAuthRepository',
             useClass: AuthRepository,
         },
+        {
+            provide: 'IAuthMaeRepository',
+            useClass: AuthMaeRepository,
+        },
         JwtStrategy,
         LoginUseCase,
+        LoginMaeUseCase,
         ValidateTokenUseCase,
     ],
     exports: [JwtModule, JwtStrategy],

@@ -27,7 +27,7 @@ export class ProfissionalSchema {
     email: string;
 
     @Column()
-    senha_hash: string;
+    password_hash: string;
 
     @Column()
     perfil_acesso: string;
