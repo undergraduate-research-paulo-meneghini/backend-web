@@ -1,3 +1,4 @@
+import { ConteudosModule } from './conteudos/conteudos.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -18,6 +19,7 @@ import { CadastroBinomioController } from './presentation/controllers/cadastro-b
     }),
     DatabaseModule,
     AuthModule,
+    ConteudosModule,
   ],
   controllers: [AppController, ProfissionalController, CadastroBinomioController],
   providers: [
