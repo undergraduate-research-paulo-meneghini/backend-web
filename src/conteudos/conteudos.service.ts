@@ -25,6 +25,17 @@ export class ConteudosService {
     });
   }
 
+  async getAppFeed(): Promise<Conteudo[]> {
+    return await this.conteudoRepository.find({
+      where: {
+        status: 'Publicado',
+      },
+      order: {
+        criadoEm: 'DESC',
+      },
+    });
+  }
+
   async findOne(id: string): Promise<Conteudo> {
     const conteudo = await this.conteudoRepository.findOne({ where: { id } });
     if (!conteudo) {

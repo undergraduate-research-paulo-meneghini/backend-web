@@ -23,6 +23,7 @@ import databaseConfig from "../config/database.config";
                 password: config.get('database.password'),
                 database: config.get('database.database'),
                 entities: [ProfissionalSchema, CadastroBinomioSchema, UserMaeSchema],
+                autoLoadEntities: true, // Automatically loads entities from feature modules
                 synchronize: false, // Desabilitado para usar tabela existente
                 logging: true, // Mostra queries SQL no console
             }),
