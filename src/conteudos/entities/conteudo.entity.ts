@@ -44,6 +44,9 @@ export class Conteudo {
   @Column({ type: 'varchar', length: 100, name: 'condicao_envio', nullable: true })
   condicaoEnvio: string;
 
+  @Column({ type: 'varchar', length: 255, name: 'imagem_capa', nullable: true })
+  imagemCapa: string;
+
   @Column({ type: 'varchar', length: 255, name: 'autor_id', nullable: true })
   autorId: string;
 

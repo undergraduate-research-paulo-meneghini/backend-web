@@ -50,6 +50,10 @@ export class CreateConteudoDto {
   @IsString()
   @IsOptional()
   condicaoEnvio?: string;
+
+  @IsString()
+  @IsOptional()
+  imagemCapa?: string;
   
   @IsString()
   @IsOptional()
